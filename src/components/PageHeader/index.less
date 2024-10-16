@@ -1,0 +1,108 @@
+@import '~@/styles/mixins';
+
+.pageHeader {
+    // padding: 16px 32px 0 32px;
+    margin-bottom: 20px;
+    border-bottom: @border-width-base @border-style-base @border-color-split;
+    transition: background-color 0.3s;
+    .wide {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .detail {
+        padding: 20px;
+        .titleContent {
+            display: flex;
+            align-items: center;
+            .logo {
+                flex: 0 1 auto;
+                margin-right: 16px;
+                padding-top: 1px;
+                > img {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: @border-radius-base;
+                    display: block;
+                }
+            }
+
+            .title {
+                font-size: 20px;
+                font-weight: bold;
+                margin-bottom: 0;
+            }
+            .backIcon {
+            }
+        }
+        .row {
+            display: flex;
+            margin-top: 20px;
+            width: 100%;
+            align-items: center;
+            .content {
+                overflow: hidden;
+            }
+            .extraContent {
+                flex: 0 1 auto;
+                margin-left: 88px;
+                text-align: right;
+                min-width: 242px;
+            }
+        }
+    }
+
+    .breadcrumb {
+        margin-bottom: 16px;
+    }
+
+    .tabs {
+        margin: 0 0 0 -8px;
+
+        :global {
+            .ant-tabs-bar {
+                border-bottom: @border-width-base @border-style-base @border-color-split;
+                margin: 0;
+            }
+        }
+    }
+
+    .title,
+    .content {
+        flex: auto;
+    }
+}
+:global([data-theme='light']) {
+    .pageHeader {
+        background-color: @layout-light-bg;
+    }
+}
+:global([data-theme='dark']) {
+    .pageHeader {
+        background-color: @component-bg;
+    }
+}
+@media screen and (max-width: @screen-xl) {
+    .pageHeader {
+        .extraContent {
+            margin-left: 44px;
+        }
+    }
+}
+
+@media screen and (max-width: @screen-lg) {
+    .pageHeader {
+        .extraContent {
+            margin-left: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: @screen-md) {
+    .pageHeader {
+        .extraContent {
+            margin-left: 0;
+            text-align: left;
+        }
+    }
+}

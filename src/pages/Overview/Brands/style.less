@@ -1,0 +1,59 @@
+@card-spacing: 18px;
+
+.container {
+    padding-bottom: 12px;
+    background: url('~@/assets/img/geo-bg2.png') no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    .content {
+        padding: 0 16px;
+    }
+    .left,
+    .right {
+        :global(.ant-card) {
+            width: 360px;
+            min-height: 260px;
+            &:not(:last-child) {
+                margin-bottom: @card-spacing;
+            }
+        }
+        :global(.ant-card-body) {
+            padding: 12px;
+        }
+    }
+    .center {
+        flex: 1;
+        // padding-top: 46px;
+        overflow: hidden;
+        :global(.ant-table-column-title) {
+            white-space: nowrap;
+        }
+    }
+}
+
+.attackTable {
+    margin-top: @card-spacing;
+}
+
+.filterForm {
+    position: absolute;
+    width: 100%;
+    user-select: none;
+    z-index: 10;
+    text-align: center;
+    :global(.ant-select) {
+        min-width: 100px;
+        &:not(:last-child) {
+            margin-right: 16px;
+        }
+    }
+}
+.globalIcon {
+    float: right;
+    font-size: 20px;
+    position: relative;
+    z-index: 99;
+    :global(.anticon) {
+        color: #84ecff;
+    }
+}

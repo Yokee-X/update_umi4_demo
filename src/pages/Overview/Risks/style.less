@@ -1,0 +1,31 @@
+.container {
+    padding-bottom: 12px;
+    background: url('~@/assets/img/geo-bg1.png') no-repeat;
+    background-size: 1920px 1080px;
+    min-height: 100%;
+    .content {
+        padding: 20px 16px 0;
+    }
+
+    :global {
+        .ant-row-flex:not(:last-child) {
+            margin-bottom: 20px;
+        }
+        .ant-card-head {
+            height: 33px;
+        }
+        .ant-card-body {
+            padding: 12px;
+        }
+        .ant-card {
+            background-color: rgba(4, 11, 23, 0.4);
+        }
+        .ant-card,
+        .ant-table {
+            min-height: 300px;
+        }
+        .ant-table-column-title {
+            white-space: nowrap;
+        }
+    }
+}

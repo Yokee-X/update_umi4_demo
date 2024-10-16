@@ -1,0 +1,84 @@
+@import '~@/styles/mixins';
+
+.tableContainer {
+    padding: 20px 20px 0;
+    :global {
+        .comp-easytable_header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            .comp-easytable_header_title {
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+                display: inline-block;
+                & > *:not(:last-child) {
+                    margin-right: 8px;
+                }
+            }
+
+            .comp-easytable_header_extra {
+                font-size: 14px;
+                color: rgba(32, 9, 9, 0.65);
+                font-weight: normal;
+                margin-left: auto;
+            }
+        }
+        .ant-table-content,
+        .ant-table-body {
+            &::-webkit-scrollbar {
+                width: 8px;
+                height: 8px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: @light_grey;
+                border-radius: 5px;
+                border: solid 1px @deep_grey;
+            }
+        }
+        .ant-table-thead > tr > th {
+            border-bottom: none;
+        }
+        .ant-table-thead > tr > th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
+            display: none;
+        }
+        .comp-easytable_before {
+            margin-bottom: @design-gutter_large;
+        }
+
+        .comp-easytable_after {
+            margin-top: @design-gutter_large;
+        }
+
+        .comp-easytable_footer {
+            display: flex;
+            padding: 20px 0;
+            align-items: center;
+            &__total {
+                flex: 1;
+            }
+        }
+    }
+}
+:global([data-theme='light']) {
+    .tableContainer {
+        background-color: @layout-light-bg;
+        :global {
+            .ant-table-thead > tr > th {
+                background: #f5f5f5;
+            }
+            .comp-easytable_error-container {
+                background-color: #fff;
+                padding: @design-gutter_large;
+                // border: 1px solid @grey-4;
+                // border-top: 0;
+            }
+        }
+    }
+}
+:global([data-theme='dark']) {
+    .tableContainer {
+        background-color: @layout-dark-bg;
+    }
+}

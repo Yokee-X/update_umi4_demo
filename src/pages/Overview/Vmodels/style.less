@@ -1,0 +1,102 @@
+@card-spacing: 18px;
+
+.filterForm {
+    text-align: center;
+    margin-bottom: 20px;
+    :global(.ant-select) {
+        min-width: 100px;
+        z-index: 20;
+        &:not(:last-child) {
+            margin-right: 16px;
+        }
+    }
+}
+.container {
+    padding-bottom: 12px;
+    background: url('~@/assets/img/car-bg.png') no-repeat;
+    background-size: 1920px 1080px;
+    // min-height: 100vh;
+    .content {
+        padding: 0 16px;
+        .row:not(:last-child) {
+            margin-bottom: 20px;
+        }
+        :global(.ant-row-flex:not(:last-child)) {
+            margin-bottom: 20px;
+        }
+        :global(.ant-card) {
+            min-height: 220px;
+            z-index: 20;
+            background-color: rgba(4, 11, 23, 0.1);
+        }
+        :global(.ant-card-body) {
+            padding: 12px;
+        }
+        :global(.ant-table-column-title) {
+            white-space: nowrap;
+        }
+    }
+    .flybox {
+        position: absolute;
+        left: 592px;
+        top: 86px;
+        width: 700px;
+        height: 479px;
+    }
+    .flycontent {
+        position: absolute;
+        user-select: none;
+        left: 592px;
+        top: 86px;
+        width: 700px;
+        height: 479px;
+        z-index: 10;
+        .flyitem {
+            color: #fff;
+            position: absolute;
+            vertical-align: middle;
+            text-align: center;
+            white-space: nowrap;
+            width: 160px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            p {
+                margin: 0;
+            }
+        }
+    }
+}
+
+.tabs {
+    :global {
+        .ant-tabs-bar {
+            margin-bottom: -1px;
+            margin-left: 2px;
+            border-color: transparent;
+        }
+        //.ant-card{
+        //    border-top: 0;
+        //    border-top-left-radius: 0;
+        //    border-top-right-radius: 0;
+        //}
+    }
+}
+
+.pieChartPlaceHolder {
+    width: 140px;
+    height: 140px;
+    margin: 20px auto;
+    border: solid 19px #5e5e5e;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 96px;
+    > label {
+        color: #838181;
+        font-size: 25px;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+}

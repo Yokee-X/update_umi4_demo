@@ -1,0 +1,471 @@
+@import '~@/styles/mixins';
+
+html,
+body,
+#root {
+    height: 100%;
+    &::-webkit-scrollbar {
+        height: 8px;
+        width: 8px;
+        // background: #f5f5f5;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: @light_grey;
+        border-radius: 5px;
+        border: solid 1px @deep_grey;
+    }
+}
+
+body {
+    //font-family: "Helvetica Neue", Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif ;
+    font-family: -apple-system, BlinkMacSystemFont, AlibabaSans, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+* {
+    word-wrap: break-word;
+}
+
+body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a:hover {
+    opacity: 0.9;
+}
+
+.globalSpin {
+    width: 100%;
+    margin: 40px 0 !important;
+}
+
+// reset default
+li {
+    list-style: none;
+}
+
+canvas {
+    display: block;
+}
+
+.ant-layout {
+    min-height: 100%;
+}
+
+.ant-spin-container {
+    overflow: visible !important;
+}
+
+// utils
+.gutter {
+    margin: @design-gutter;
+}
+
+.gutter-lg {
+    margin: @design-gutter_large;
+}
+
+.gutter-v {
+    margin: @design-gutter 0;
+}
+
+.gutter-h {
+    margin: 0 @design-gutter;
+}
+
+.gutter-v_lg {
+    margin: @design-gutter_large 0;
+}
+
+.gutter-left {
+    margin-left: @design-gutter;
+}
+
+.gutter-right {
+    margin-right: @design-gutter;
+}
+
+.gutter-top {
+    margin-top: @design-gutter;
+}
+
+.gutter-h_lg {
+    margin: 0 @design-gutter_large;
+}
+
+.gutter-left_lg {
+    margin-left: @design-gutter_large;
+}
+
+.gutter-right_lg {
+    margin-right: @design-gutter_large;
+}
+
+.gutter-top_lg {
+    margin-top: @design-gutter_large;
+}
+
+.gutter-bottom {
+    margin-bottom: @design-gutter;
+}
+
+.gutter-bottom_lg {
+    margin-bottom: @design-gutter_large;
+}
+
+.text-sm {
+    font-size: 80%;
+}
+
+.text-md {
+    font-size: 120%;
+}
+
+.text-lg {
+    font-size: 150%;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-middle {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.text-danger {
+    color: @error-color;
+}
+
+.text-primary {
+    color: var(--ant-primary-color);
+}
+
+.text-warning {
+    color: @warning-color;
+}
+.text-blue {
+    color: #1890ff;
+}
+.text-success {
+    color: @success-color;
+}
+
+.text-muted {
+    color: rgba(0, 0, 0, 0.45);
+}
+
+.text-dark {
+    color: @dark_grey;
+}
+
+.bg-white {
+    background-color: #ffffff;
+}
+
+.bg-warning {
+    background-color: @warning-color;
+}
+
+.bg-danger {
+    background-color: @error-color;
+}
+
+.bg-info {
+    background-color: @info-color;
+}
+
+.bg-primary {
+    background-color: var(--ant-primary-color);
+}
+
+.bg-success {
+    background-color: @success-color;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.inline {
+    display: inline;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.block {
+    display: block;
+}
+
+.invisible {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pull-right {
+    float: right;
+}
+
+.pull-left {
+    float: left;
+}
+
+.btn-group {
+    > button,
+    .button {
+        &:not(:last-child) {
+            margin-right: @design-gutter;
+        }
+    }
+}
+
+.link-group {
+    > a,
+    > .link {
+        white-space: nowrap;
+        &:not(:last-child) {
+            margin-right: 12px;
+        }
+    }
+}
+
+[role='button'] {
+    cursor: pointer;
+}
+
+.x-scroll {
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: @light_grey;
+        border-radius: 3px;
+        border: solid 1px @deep_grey;
+    }
+}
+
+.card-group {
+    .ant-card:not(:last-child) {
+        margin-bottom: @design-gutter_large;
+    }
+}
+
+.card-without_headerborder {
+    .ant-card-head {
+        border-bottom: 0;
+    }
+}
+.card-body_nopadding {
+    .ant-card-body {
+        padding: 0 !important;
+    }
+}
+
+.card-without-title {
+    background: #ffffff;
+    border-radius: 3px;
+    padding: 24px;
+}
+
+.card-lite {
+    .ant-card-head {
+        border-bottom: 0;
+    }
+}
+
+.ant-tabs-large .ant-tabs-nav-wrap {
+    padding-left: @design-gutter_large;
+    .ant-tabs-tab {
+        padding-top: 16px;
+        padding-bottom: 14px;
+        line-height: 24px;
+    }
+}
+
+.middle-inline_group {
+    > span {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 6px;
+    }
+}
+
+// .ant-table-body table {
+//     border-left: 1px solid @grey-4;
+//     border-right: 1px solid @grey-4;
+//     border-top: 1px solid @grey-4;
+// }
+
+.search-form {
+    :global {
+        .ant-form-item {
+            margin-bottom: 0px;
+            // display: flex;
+            .ant-form-item-label {
+                // line-height: 32px;
+                label {
+                    font-weight: bold;
+                }
+            }
+            // .ant-form-item-control-wrapper {
+            //     flex: 1;
+            //     overflow: hidden;
+            //     .ant-form-item-control {
+            //         line-height: 32px;
+            //         .ant-form-explain {
+            //             margin-bottom: -2px;
+            //         }
+            //     }
+            // }
+        }
+        // .ant-form-item-with-help {
+        //     margin-bottom: 0px;
+        // }
+        // .search-group {
+        //     padding-bottom: 20px;
+        // }
+        .ant-picker {
+            width: 100%;
+            min-width: 0px !important;
+        }
+    }
+}
+// .ant-tooltip {
+//     z-index: 999;
+// }
+.ant-modal-content {
+    .ant-modal-header {
+        padding: 16px 20px;
+        .ant-modal-title {
+            font-weight: bold;
+            position: relative;
+            font-size: 20px;
+            &::before {
+                content: '';
+                position: relative;
+                display: inline-block;
+                top: 1px;
+                width: 4px;
+                height: 16px;
+                background-color: var(--ant-primary-color);
+                margin-right: 8px;
+            }
+        }
+    }
+    .ant-modal-body {
+        padding: 20px;
+    }
+}
+.ant-card {
+    .ant-card-head {
+        padding: 0 20px;
+        .ant-card-head-title {
+            font-weight: bold;
+            position: relative;
+            font-size: 20px;
+            line-height: 22px;
+            &::before {
+                content: '';
+                position: relative;
+                display: inline-block;
+                top: 1px;
+                width: 4px;
+                height: 16px;
+                background-color: var(--ant-primary-color);
+                margin-right: 8px;
+            }
+        }
+    }
+
+    .ant-card-body {
+        padding: 20px;
+    }
+}
+.op-form {
+    .ant-form-item {
+        &:not(.ant-form-item-with-help) {
+            margin-bottom: 18px;
+        }
+        &.ant-form-item-with-help {
+            margin-bottom: 16px;
+        }
+    }
+    .ant-form-item-label {
+        label {
+            font-weight: bold;
+        }
+    }
+    &.ant-form-horizontal .ant-form-item-control {
+        flex: 1 1 100%;
+        .ant-form-item-explain {
+            margin-top: -2px;
+        }
+    }
+    textarea.ant-input {
+        margin-bottom: 0;
+    }
+    .ant-picker {
+        width: 100%;
+    }
+}
+a .anticon {
+    color: rgba(0, 0, 0, 0.85);
+    &:hover {
+        color: var(--ant-primary-color);
+    }
+}
+.anticon {
+    &[disabled] {
+        color: @grey-5;
+        cursor: not-allowed;
+        &:hover {
+            color: @grey-5;
+        }
+    }
+    &:hover {
+        color: var(--ant-primary-color);
+    }
+}
+.num-width-full {
+    width: 100% !important;
+}
+// .ant-switch.ant-switch-checked {
+//     background-color: var(--ant-primary-color);
+// }
+.g6-tooltip {
+    border: 1px solid #e2e2e2;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #545454;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px 8px;
+    box-shadow: rgb(174, 174, 174) 0px 0px 10px;
+    max-width: 300px;
+    white-space: pre-wrap;
+}
+.ant-layout {
+    background: #f5f5f5;
+}
+.ant-layout-footer {
+    background: #f5f5f5;
+}

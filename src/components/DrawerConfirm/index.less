@@ -1,0 +1,69 @@
+@import '~@/styles/mixins';
+
+:global {
+    .ant-drawer-wrapper-body {
+        .ant-drawer-header {
+            height: 60px;
+            padding: 16px 20px;
+        }
+        .ant-drawer-title {
+            font-weight: bold;
+            position: relative;
+            font-size: 20px;
+            line-height: 22px;
+            &::before {
+                content: '';
+                position: relative;
+                display: inline-block;
+                top: 1px;
+                width: 4px;
+                height: 16px;
+                background-color: var(--ant-primary-color);
+                margin-right: 8px;
+            }
+        }
+        .ant-drawer-body {
+            padding: 20px;
+            &::-webkit-scrollbar {
+                height: 8px;
+                width: 8px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: @light_grey;
+                border-radius: 5px;
+                border: solid 1px @deep_grey;
+            }
+        }
+    }
+    .comp-DrawerConfirm_content {
+        padding-bottom: 60px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .comp-DrawerConfirm_footer {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 10px 16px;
+        text-align: right;
+        z-index: 99;
+
+        > button:not(:last-child) {
+            margin-right: @design-gutter;
+        }
+    }
+    [data-theme='light'] {
+        .comp-DrawerConfirm_footer {
+            border-top: 1px solid @grey-4;
+            background-color: @layout-light-bg;
+        }
+    }
+    [data-theme='dark'] {
+        .comp-DrawerConfirm_footer {
+            border-top: 1px solid @grey-9;
+            background-color: @component-bg;
+        }
+    }
+}

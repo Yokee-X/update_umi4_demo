@@ -1,0 +1,76 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "max dev",
+    "start:mock": "cross-env APP_TYPE=site BROWSER=none max dev",
+    "build": "max  build",
+    "analyze": "cross-env ANALYZE=1 max  dev ",
+    "commit": "git add . && git cz && git push origin"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "dependencies": {
+    "@ant-design/dark-theme": "^1.0.3",
+    "@ant-design/icons": "^5.3.6",
+    "@antv/g6": "^4.7.14",
+    "@antv/l7": "^2.20.13",
+    "@antv/larkmap": "^1.4.13",
+    "antd": "4.24.16",
+    "axios": "^0.21.1",
+    "bizcharts": "4.1.14",
+    "classnames": "^2.3.1",
+    "crypto-js": "^4.1.1",
+    "deep-diff": "^1.0.2",
+    "enquire-js": "^0.2.1",
+    "immutability-helper": "^3.1.1",
+    "join-path": "^1.1.1",
+    "js-cookie": "^3.0.0",
+    "lodash": "4.17.11",
+    "lodash-decorators": "^6.0.1",
+    "lodash.debounce": "4.0.8",
+    "moment": "2.24.0",
+    "numeral": "2.0.6",
+    "path-to-regexp": "^2.4.0",
+    "prop-types": "^15.7.2",
+    "rc-animate": "^2.8.2",
+    "react": "^18.2.0",
+    "react-container-query": "^0.12.0",
+    "react-dom": "^18.2.0",
+    "react-json-view": "^1.21.3",
+    "react-router-config": "^5.1.1",
+    "react-viewer": "^3.2.2",
+    "safe-clone-deep": "^1.1.5",
+    "terser-webpack-plugin": "4"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@umijs/max": "^4.0.0",
+    "cross-env": "^7.0.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "emoji-regex": "^10.2.1",
+    "jquery": "^3.6.0",
+    "lint-staged": "^10.0.7",
+    "mockjs": "^1.1.0",
+    "prettier": "^2.2.0",
+    "react-dnd": "^14.0.5",
+    "react-dnd-html5-backend": "^14.1.0",
+    "typescript": "^4.1.2",
+    "yorkie": "^2.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

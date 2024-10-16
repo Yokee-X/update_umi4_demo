@@ -1,0 +1,48 @@
+.header {
+  height: 78px;
+  text-align: center;
+  background: url('~@/assets/img/page-header-bg.png') no-repeat;
+  background-size: 100% 100%;
+  //margin-bottom: 6px;
+  .headerLeft,
+  .headerRight {
+    flex: 1;
+  }
+  .title {
+    max-width: 460px;
+    min-width: 460px;
+    line-height: 78px - 20;
+    h1 {
+      margin: 0;
+      padding: 0;
+      font-size: 26px;
+      color: #84ecff;
+      letter-spacing: 1px;
+      text-shadow: 0 5px 9px rgba(0, 123, 167, 0.64);
+    }
+  }
+}
+
+.quantity {
+  color: #fff;
+  :global {
+    //.ant-statistic-content-value{
+    //    font-family: "numberFont", serif;
+    //}
+    .ant-col {
+      padding: 4px 0;
+    }
+    .ant-statistic {
+      line-height: 1.2;
+    }
+    .ant-statistic-title {
+      font-size: 12px;
+      color: #06accd;
+    }
+    .ant-statistic-content {
+      font-size: 16px;
+      color: #fff;
+      font-weight: bold;
+    }
+  }
+}

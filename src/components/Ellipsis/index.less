@@ -1,0 +1,33 @@
+.ellipsis {
+    // overflow: hidden;
+    display: inline-block;
+    word-break: break-all;
+    // width: 100%;
+}
+
+.lines {
+    position: relative;
+    .shadow {
+        display: block;
+        position: relative;
+        color: transparent;
+        opacity: 0;
+        z-index: -999;
+    }
+}
+
+.lineClamp {
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+}
+:global {
+    .ant-tooltip-inner {
+        max-height: 900px;
+        overflow-y: auto;
+    }
+    .ant-tooltip-inner::-webkit-scrollbar {
+        display: none;
+    }
+}
